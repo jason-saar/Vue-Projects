@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>VueJS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    </head>
+    <body>
+
+        <div id="exercise">
+            <p>VueJS is pretty cool - {{ name }} ({{ age }})</p>
+            <p>{{ age * 3 }}</p>
+            <p>{{ randomFloat() }}</p>
+            <div>
+                <img v-bind:src="img" style="width:100px;height:100px">
+            </div>
+            <div>
+                <input type="text" v-bind:value="value">
+            </div>
+        </div>
+    </body>
+
+    <script>
+        new Vue({
+            el: '#exercise',
+            data: {
+                name: 'Jason',
+                age: '26',
+                img: 'https://www.gamasutra.com/db_area/images/news/2018/Jun/320213/supermario64thumb1.jpg',
+                value: 'Jason'
+
+            },
+            methods: {
+                randomFloat: function() {
+                    return Math.random()
+                }
+            }
+        });
+    </script>
+</html>
